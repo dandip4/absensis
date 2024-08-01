@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>Adminto - Responsive Bootstrap 4 Landing Page Template</title>
@@ -8,71 +9,76 @@
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <style>
-            .services-box {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .services-box {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.services-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
+        .services-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link rel="shortcut icon" href="{{ asset('Adminto_v5.2.0/Landing/images/favicon.ico') }}">
-    <link rel="stylesheet" href="{{ asset('Adminto_v5.2.0/Landing/css/bootstrap.min.css')}}" type="text/css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('Adminto_v5.2.0/Landing/css/materialdesignicons.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('Adminto_v5.2.0/Landing/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('Adminto_v5.2.0/Landing/css/materialdesignicons.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('Adminto_v5.2.0/Landing/css/pe-icon-7-stroke.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('Adminto_v5.2.0/Landing/css/style.css') }}" />
 
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="58" class="scrollspy-example">
-    @if(session('error'))
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'info',
-                title: 'Info!',
-                text: '{{ session('error') }}',
-                timer: 3000,
-                timerProgressBar: true,
-                showConfirmButton: true,
+    @if (session('error'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Info!',
+                    text: '{{ session('error') }}',
+                    timer: 3000,
+                    timerProgressBar: true,
+                    showConfirmButton: true,
+                });
             });
-        });
-    </script>
-@endif
-@if(session('errorrr'))
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Info!',
-            text: '{{ session('errorrr') }}',
-            timer: 3000,
-            timerProgressBar: true,
-            showConfirmButton: true,
-        });
-    });
-</script>
-@endif
-@if(session('errorr'))
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        Swal.fire({
-            icon: 'error',
-            title: 'Info!',
-            text: '{{ session('errorr') }}',
-            timer: 3000,
-            timerProgressBar: true,
-            showConfirmButton: true,
-        });
-    });
-</script>
-@endif
+        </script>
+    @endif
+    @if (session('errorrr'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Info!',
+                    text: '{{ session('errorrr') }}',
+                    timer: 3000,
+                    timerProgressBar: true,
+                    showConfirmButton: true,
+                });
+            });
+        </script>
+    @endif
+    @if (session('errorr'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Info!',
+                    text: '{{ session('errorr') }}',
+                    timer: 3000,
+                    timerProgressBar: true,
+                    showConfirmButton: true,
+                });
+            });
+        </script>
+    @endif
     <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark bg-dark" id="nav-sticky">
         <div class="container-fluid">
             <a class="logo text-uppercase" href="{{ url('/') }}">
-                <img src="{{ asset('Adminto_v5.2.0/Landing/images/logo-light.png') }}" alt="" class="logo-light" height="18" />
-                <img src="{{ asset('Adminto_v5.2.0/Landing/images/logo-dark.png') }}" alt="" class="logo-dark" height="18" />
+                <img src="{{ asset('Adminto_v5.2.0/Landing/images/logo-light.png') }}" alt="" class="logo-light"
+                    height="18" />
+                <img src="{{ asset('Adminto_v5.2.0/Landing/images/logo-dark.png') }}" alt="" class="logo-dark"
+                    height="18" />
             </a>
 
             {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,23 +87,23 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ms-auto" id="mySidenav">
                     <li class="nav-item">
-                        <a href="{{route('mahasiswa.absensi.index')}}" class="nav-link active">Home</a>
+                        <a href="{{ route('mahasiswa.absensi.index') }}" class="nav-link active">Home</a>
                     </li>
                     @guest
-                    <li class="nav-item">
-                        <a href="{{ route('login') }}" class="nav-link">Login</a>
-                    </li>
+                        <li class="nav-item">
+                            <a href="{{ route('login') }}" class="nav-link">Login</a>
+                        </li>
                     @else
-                    <li class="nav-item">
-                        <a href="{{ route('logout') }}" class="nav-link"
-                           onclick="event.preventDefault();
+                        <li class="nav-item">
+                            <a href="{{ route('logout') }}" class="nav-link"
+                                onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();">
-                           Logout
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </li>
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
                     @endguest
                 </ul>
             </div>
@@ -115,35 +121,37 @@
                 </div>
             </div>
             <div class="row">
-                @if(isset($weeks) && $weeks->count() > 0)
-                @foreach($weeks  as $week)
-                <div class="col-xl-4 col-sm-6">
-                    <a href="{{ route('mahasiswa.absensi.form', [$mataKuliahId, $week->id]) }}">
-                    <div class="services-box p-4 bg-white mt-4">
-                        <div class="services-img float-start me-4">
-                            <img src="{{ asset('Adminto_v5.2.0/Landing/images/icons/left.png') }}" alt="">
+                @if (isset($weeks) && $weeks->count() > 0)
+                    @foreach ($weeks as $week)
+                        <div class="col-xl-4 col-sm-6">
+                            <a href="{{ route('mahasiswa.absensi.form', [$mataKuliahId, $week->id]) }}">
+                                <div class="services-box p-4 bg-white mt-4">
+                                    <div class="services-img float-start me-4">
+                                        <img src="{{ asset('Adminto_v5.2.0/Landing/images/icons/left.png') }}"
+                                            alt="">
+                                    </div>
+                                    <h5>Week {{ $week->nama }}</h5>
+                                    @if ($absensiStatus[$week->id]['statusAlpa'])
+                                        <i class="fas fa-times-circle text-danger" title="Alpa"></i>
+                                    @elseif ($absensiStatus[$week->id]['alreadyAbsent'])
+                                        <i class="fas fa-check-circle text-success" title="Sudah Absen"></i>
+                                    @else
+                                        <i class="fas fa-exclamation-circle text-warning" title="Belum Absen"></i>
+                                    @endif
+                                </div>
+                            </a>
                         </div>
-                        <h5>Week {{ $week->nama }}</h5>
-                        @if($absensiStatus[$week->id]['alreadyAbsent'])
-                        <i class="fas fa-check-circle text-success" title="Sudah Absen">sa</i>
-                    @elseif($absensiStatus[$week->id]['statusAlpa'])
-                        <i class="fas fa-times-circle text-danger" title="Alpa">as</i>
-                    @else
-                        <i class="fas fa-exclamation-circle text-warning" title="Belum Absen">xz</i>
-                    @endif
-                    </div>
-                </a>
-                </div>
-                @endforeach
+                    @endforeach
                 @else
-                <div class="col-xl-12 col-sm-6">
-                    <p class="text-muted h3 text-center">Belum ada Minggu tersedia.</p>
-                </div>
+                    <div class="col-xl-12 col-sm-6">
+                        <p class="text-muted h3 text-center">Belum ada Minggu tersedia.</p>
+                    </div>
                 @endif
             </div>
             <div class="row">
                 <div class="col-12 text-center mt-4">
-                    <a href="{{ route('mahasiswa.absensi.index') }}" class="btn btn-primary">Kembali ke Halaman Utama</a>
+                    <a href="{{ route('mahasiswa.absensi.index') }}" class="btn btn-primary">Kembali ke Halaman
+                        Utama</a>
                 </div>
             </div>
         </div>
@@ -168,9 +176,11 @@
                             <li class="list-inline-item"><a href="#"><i class="mdi mdi-facebook"></i></a></li>
                             <li class="list-inline-item"><a href="#"><i class="mdi mdi-twitter"></i></a></li>
                             <li class="list-inline-item"><a href="#"><i class="mdi mdi-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="mdi mdi-google-plus"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="mdi mdi-google-plus"></i></a>
+                            </li>
                         </ul>
-                        <p class="text-white-50 mb-4">2016 - 2020 © Adminto. Design by <a href="#" target="_blank" class="text-white-50">Coderthemes</a> </p>
+                        <p class="text-white-50 mb-4">2016 - 2020 © Adminto. Design by <a href="#"
+                                target="_blank" class="text-white-50">Coderthemes</a> </p>
                     </div>
                 </div>
             </div>
@@ -183,4 +193,5 @@
     <script src="{{ asset('Adminto_v5.2.0/Landing/js/counter.int.js') }}"></script>
     <script src="{{ asset('Adminto_v5.2.0/Landing/js/app.js') }}"></script>
 </body>
+
 </html>
